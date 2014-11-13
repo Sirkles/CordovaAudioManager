@@ -6,7 +6,7 @@
  * See LICENSE.TXT for the full license.
  */
 
-package net.sirkles.plugins.AudioManager;
+package net.sirkles.plugins.CordovaAudioManager;
 
 // Cordova API's
 import org.apache.cordova.*;
