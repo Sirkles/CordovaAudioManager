@@ -17,7 +17,7 @@ function CordovaAudioManager() {
 	 * @param id The unique identifier to assign the audio file.
 	 */
 	this.load = function(file, id) {
-
+		CordovaAudioManager_load(file, id, CordovaAudioManager_SuccessCallback, CordovaAudioManager_ErrorCallback);
 	}
 
 	/**
@@ -28,17 +28,23 @@ function CordovaAudioManager() {
 	 * @param rightVolume The volume of the right speaker as a floating-point number between 0.0 and 1.0.
 	 */
 	this.play = function(id, loops, leftVolume, rightVolume) {
+		CordovaAudioManager_play(id, loops, leftVolume, rightVolume, CordovaAudioManager_SuccessCallback, CordovaAudioManager_ErrorCallback);
+	}
 
+	function CordovaAudioManager_SuccessCallback() {
+		console.log("CordovaAudioManager call was completed sucessfully!");
+	}
+
+	function CordovaAudioManager_ErrorCallback() {
+		console.log("CordovaAudioManager call was not completed sucessfully. :-(");
 	}
 
 	/* Internal methods to hook into the native code. */
-	function AudioManager_load(file, audioId, callback) {
-		cordova.exec(callback, function(err) { callback("An error has occurred."); },
-			"AudioManager", "load", [file, audioId]);
+	function CordovaAudioManager_load(file, audioId, successCallback, errorCallback) {
+		cordova.exec(successCallback, errorCallback, "AudioManager", "load", [file, audioId]);
 	}
 
-	function AudioManager_play(audioId, loops, leftVolume, rightVolume, callback) {
-		cordova.exec(callback, function(err) { callback("An error has occurred."); },
-			"AudioManager", "play", [file, audioId, loops, leftVolume, rightVolume]);
+	function CordovaAudioManager_play(audioId, loops, leftVolume, rightVolume, callback) {
+		cordova.exec(successCallback, errorCallback, "AudioManager", "play", [file, audioId, loops, leftVolume, rightVolume]);
 	}
 }
