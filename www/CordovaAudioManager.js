@@ -19,9 +19,10 @@ this.CordovaAudioManager = (function() {
 	 * Loads a sound file and assigns it to an identifier.
 	 * @param file The full qualified path to the audio file.
 	 * @param id The unique identifier to assign the audio file.
+	 * @param type The type of audio of the file. Currently supported: "music" and "sound"
 	 */
-	this.load = function(file, id) {
-		CordovaAudioManager_load(file, id, CordovaAudioManager_SuccessCallback, CordovaAudioManager_ErrorCallback);
+	this.load = function(file, id, type) {
+		CordovaAudioManager_load(file, id, type, CordovaAudioManager_SuccessCallback, CordovaAudioManager_ErrorCallback);
 	}
 
 	/**
