@@ -10,7 +10,7 @@
  * Plays sound effects and music using native API's
  * @author Josh Kennedy
  */
-function CordovaAudioManager() {
+this.CordovaAudioManager = (function() {
 	/**
 	 * Loads a sound file and assigns it to an identifier.
 	 * @param file The full qualified path to the audio file.
@@ -47,4 +47,4 @@ function CordovaAudioManager() {
 	function CordovaAudioManager_play(audioId, loops, leftVolume, rightVolume, callback) {
 		cordova.exec(successCallback, errorCallback, "AudioManager", "play", [file, audioId, loops, leftVolume, rightVolume]);
 	}
-}
+})();
