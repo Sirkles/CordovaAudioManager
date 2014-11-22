@@ -1,5 +1,5 @@
 /*
- * CordovaAudioManager.java
+ * AndroidAudioManager.java
  * Created by Josh Kennedy on 3 November 2014
  *
  * This computer source code is bound under the University of Illinois/NCSA license.
@@ -31,7 +31,7 @@ import java.util.*;
  * Manages and plays audio from JavaScript without platform limitations.
  * @author Josh Kennedy
  */
-public class CordovaAudioManager extends CordovaPlugin {
+public class AndroidAudioManager extends CordovaPlugin {
 	static HashMap<String, Integer> soundMap;
 	static HashMap<String, MediaPlayer> musicMap;
 
