@@ -21,7 +21,7 @@ this.CordovaAudioManager = (function() {
 	 * @param id The unique identifier to assign the audio file.
 	 * @param type The type of audio of the file. Currently supported: "music" and "sound"
 	 */
-	this.load = function(file, id, type) {
+	CordovaAudioManager.prototype.load = function(file, id, type) {
 		CordovaAudioManager_load(file, id, type, CordovaAudioManager_SuccessCallback, CordovaAudioManager_ErrorCallback);
 	}
 
@@ -32,7 +32,7 @@ this.CordovaAudioManager = (function() {
 	 * @param leftVolume The volume of the left speaker as a floating-point number between 0.0 and 1.0.
 	 * @param rightVolume The volume of the right speaker as a floating-point number between 0.0 and 1.0.
 	 */
-	this.play = function(id, loops, leftVolume, rightVolume) {
+	CordovaAudioManager.prototype.play = function(id, loops, leftVolume, rightVolume) {
 		CordovaAudioManager_play(id, loops, leftVolume, rightVolume, CordovaAudioManager_SuccessCallback, CordovaAudioManager_ErrorCallback);
 	}
 
