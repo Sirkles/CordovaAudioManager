@@ -11,6 +11,10 @@
  * @author Josh Kennedy
  */
 this.CordovaAudioManager = (function() {
+	function CordovaAudioManager() {
+		console.log("Initialized CordovaAudioManager.");
+	}
+
 	/**
 	 * Loads a sound file and assigns it to an identifier.
 	 * @param file The full qualified path to the audio file.
